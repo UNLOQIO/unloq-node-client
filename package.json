@@ -9,6 +9,7 @@
     "bluebird": "^2.8.1",
     "btoa": "^1.1.2",
     "log4js": "0.6.x",
+    "node-forge": "^0.6.20",
     "node.extend": "^1.1.3",
     "request": "2.51.x",
     "underscore": "1.7.0"

@@ -1,20 +1,22 @@
 /**
- * Example application that uses the MyShield client API
+ * Example application that uses the Unloq client API
  */
+var unloq = require('../index'); // this is require('unloq-node')
 
-var shield = require('../index'); // this is require('myshield-node')
-
-var authObj = new shield.Auth({
+var authObj = new unloq.Auth({
   apiKey: 'key',
   privateKey: 'pkey',
   publicKey: 'pubkey',
-  gateway: 'http://myshield.dev/'
+  domain: 'http://unloq.dev/',
+  gateway: 'http://unloq.dev'
 });
 
-var apiObj = new shield.Api(authObj);
+var apiObj = new unloq.Api(authObj);
 
 apiObj
-  .authenticate('http://myshield.dev/','jane@ifrpc.ro', '492')
+  .authenticate('john@psspw.ro', '680')
+  //.authenticate('john@2r5ls.ro','887')
+  //.authenticate('john@ypt0e.ro', '515')
   .on('pending', function() {
     console.log("Pending...");
   })
@@ -22,7 +24,7 @@ apiObj
     // TODO: generate session.
     var sessionId = new Date().getTime() + Math.random().toString();
     console.log("Access token:", accessToken)
-    return apiObj.confirmToken(accessToken, sessionId, 3600);
+    //return apiObj.confirmToken(accessToken, sessionId, 3600);
   })
   .then(function(userData) {
     console.log("Request terminated. User:", userData);

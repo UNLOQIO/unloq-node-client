@@ -1,30 +1,30 @@
 /**
-* Example application that uses the MyShield authorization API.
+* Example application that uses the Unloq access authorization API.
 * */
 
-var shield = require('../index');
+var unloq = require('../index');
 
-var authObj = new shield.Auth({
+var authObj = new unloq.Auth({
   apiKey: 'key',
-  domain: 'http://myshield.dev',
+  domain: 'http://unloq.dev',
   privateKey: 'pkey',
   publicKey: 'pubkey',
-  gateway: 'http://myshield.dev/'
+  gateway: 'http://unloq.dev/'
 });
 
 
-var apiObj = new shield.Api(authObj);
+var apiObj = new unloq.Api(authObj);
 
 var userData = {  // This contains the user information that we want to authorize against the given target user.
-  email: 'jane@doe.ro',
+  email: 'a@doe.ro',
   name: 'Jane Doe Doloris'
   // OPTIONAL: ip: the source IP address.
 };
 
-var targetUser = 'john@doe.ro';
+var targetEmail = 'john@doe.ro';
 
 apiObj
-  .authorizeAccess(targetUser, userData, true)
+  .authorizeAccess(targetEmail, userData, true)
   .then(function(result) {
     console.log("ACCESS Granted. Token:", result.token);
   })

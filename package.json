@@ -1,7 +1,7 @@
 {
-  "name": "myshield-node",
-  "author": "MyShield.io",
-  "version": "0.0.1",
+  "name": "unloq",
+  "author": "unloq.io",
+  "version": "0.0.3",
   "scripts": {},
   "dependencies": {
     "async": "0.9.0",
@@ -15,14 +15,14 @@
     "underscore": "1.7.0"
   },
   "devDependencies": {},
-  "description": "Node.js client MyShield.io API",
+  "description": "Node.js client for Unloq.io API",
   "main": "index.js",
   "engines": {
     "node": "0.10.x"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/MYSHIELD/node-client"
+    "url": "https://github.com/UNLOQ/node-client"
   },
-  "homepage": "https://github.com/MYSHIELD/node-client"
+  "homepage": "https://github.com/UNLOQ/node-client"
 }

@@ -8,7 +8,7 @@ var EventEmitter = require('events').EventEmitter,
 
 
 /* First thing we do is we wrap the "promise" function over bluebird. */
-bluebird.promise = function CreateShieldPromise(handler) {
+bluebird.promise = function CreateUnloqPromise(handler) {
   var _resolve,
     _reject,
     eventObj = new EventEmitter();

@@ -5,10 +5,9 @@ var unloq = require('../index'); // this is require('unloq-node')
 
 var authObj = new unloq.Auth({
   apiKey: 'key',
-  privateKey: 'pkey',
-  publicKey: 'pubkey',
+  apiSecret: 'secret',
   domain: 'http://unloq.dev/',
-  gateway: 'http://unloq.dev'
+  gateway: 'http://unloq.dev:4000'
 });
 
 var apiObj = new unloq.Api(authObj);

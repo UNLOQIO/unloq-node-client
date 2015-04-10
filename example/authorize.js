@@ -6,10 +6,7 @@ var unloq = require('../index');
 
 var authObj = new unloq.Auth({
   apiKey: 'key',
-  domain: 'http://unloq.dev',
-  privateKey: 'pkey',
-  publicKey: 'pubkey',
-  gateway: 'http://unloq.dev/'
+  apiSecret: 'secret'
 });
 
 

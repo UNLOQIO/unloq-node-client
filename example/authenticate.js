@@ -1,7 +1,8 @@
 /**
  * Example application that uses the UNLOQ client API
  */
-var unloq = require('../index'); // this is require('unloq-node')
+var unloq = require('../index'); // this is require('unloq')
+var config = require('./config');
 
 var authObj = new unloq.Auth({
   apiKey: 'jkasdfnknasdlkfnjkasdnlkfjnlasdnfasdjnfjk234nf',
@@ -11,8 +12,10 @@ var authObj = new unloq.Auth({
 var apiObj = new unloq.Api(authObj);
 
 apiObj
-  .authenticate('john@doe.ro','111')
-  //.authenticate('john@ypt0e.ro', '515')
+  .authenticate({
+    email: 'rar@ra.ra',
+    digits: '787'
+  })
   .on('pending', function() {
     console.log("Pending...");
   })
@@ -20,7 +23,10 @@ apiObj
     // TODO: generate session.
     var sessionId = new Date().getTime() + Math.random().toString();
     console.log("Access token:", accessToken)
-    return apiObj.confirmToken(accessToken, sessionId, 3600);
+    return apiObj.tokenData(accessToken, {
+      sessionId: sessionId,
+      duration: 3000
+    });
   })
   .then(function(userData) {
     console.log("Request terminated. User:", userData);

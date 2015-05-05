@@ -3,14 +3,9 @@
 * */
 
 var unloq = require('../index');
+var config = require('./config');
 
-var authObj = new unloq.Auth({
-  apiKey: 'key',
-  apiSecret: 'secret'
-});
-
-
-var apiObj = new unloq.Api(authObj);
+var apiObj = new unloq.Api(config);
 
 var userData = {  // This contains the user information that we want to authorize against the given target user.
   email: 'a@doe.ro',
@@ -18,7 +13,7 @@ var userData = {  // This contains the user information that we want to authoriz
   // OPTIONAL: ip: the source IP address.
 };
 
-var targetEmail = 'john@doe.ro';
+var targetEmail = 'ro@ro.ro';
 
 apiObj
   .authorizeAccess(targetEmail, userData, true)

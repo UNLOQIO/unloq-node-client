@@ -4,18 +4,12 @@
 var unloq = require('../index'); // this is require('unloq')
 var config = require('./config');
 
-var authObj = new unloq.Auth({
-  apiKey: 'jkasdfnknasdlkfnjkasdnlkfjnlasdnfasdjnfjk234nf',
-  apiSecret: '34jn5klj34n5jkln2jn4kl23nl4jk23nl4nl23kn4kj23nkl4n23l'
-});
-
-var apiObj = new unloq.Api(authObj);
+var apiObj = new unloq.Api(config);
 
 apiObj
   .authenticate({
-    email: 'rar@ra.ra',
-    digits: '787'
-  })
+    email: 'ro@rarara.ra'
+  }, ['first_name'])
   .on('pending', function() {
     console.log("Pending...");
   })

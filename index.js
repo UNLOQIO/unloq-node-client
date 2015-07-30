@@ -43,6 +43,12 @@ bluebird.promise = function CreateUnloqPromise(handler) {
 
 module.exports = {};
 
+module.exports.defaults = function SetDefaultConfig(config) {
+  if(typeof config !== 'object' || !config) return this;
+  AuthClass.setDefaultConfig(config);
+  return this;
+};
+
 Object.defineProperty(module.exports, 'Auth', {
   configurable: false,
   enumerable: false,

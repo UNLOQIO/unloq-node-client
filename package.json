@@ -1,7 +1,7 @@
 {
   "name": "unloq",
   "author": "UNLOQ.io",
-  "version": "0.2.54",
+  "version": "0.9.0",
   "scripts": {},
   "dependencies": {
     "async": "1.4.x",
